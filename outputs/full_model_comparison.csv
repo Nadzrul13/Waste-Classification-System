@@ -1,0 +1,4 @@
+Model,Train Acc (%),Val Acc (%),Test Acc (%),Inf. Time (ms),Size (MB)
+Base_CNN,85.7,85.62,86.47,6.74,42.61
+VGG16,95.78,93.42,91.44,15.24,512.21
+MobileNetV2,91.75,92.62,92.72,7.22,8.73
