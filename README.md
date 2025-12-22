@@ -98,16 +98,17 @@ Sistem ini diuji menggunakan data independen (*test set*) untuk memastikan objek
 
 ### 1. Tabel Perbandingan Performa
 
-| Model | Training Accuracy | Test Accuracy | Analysis Comparison |
-| :--- | :---: | :---: | :--- |
-| **MobileNetV2** | **91.8%** | **92.7%** | **Top-Performer.** Generalisasi terbaik dengan akurasi tertinggi dan sangat ringan untuk deployment. |
-| **VGG16** | 95.8% | 91.4% | **Stable Performance.** Performa sangat kuat dan stabil, namun membutuhkan memori besar (high latency). |
-| **Base CNN** | 85.7% | 86.5% | **Baseline.** Hasil solid untuk arsitektur sederhana, namun masih di bawah performa model *Transfer Learning*. |
+| Model | Training Acc | Test Acc | Inf. Time (ms) | Size (MB) | Analysis Comparison |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **MobileNetV2** | **91.8%** | **92.7%** | **7.22 ms** | **8.73 MB** | **Top-Performer.** Efisiensi luar biasa dengan akurasi tertinggi dan ukuran paling ringan. |
+| **VGG16** | 95.8% | 91.4% | 15.24 ms | 512.21 MB | **Heavyweight.** Akurasi sangat stabil namun sangat lambat dan memakan banyak ruang penyimpanan. |
+| **Base CNN** | 85.7% | 86.5% | 6.74 ms | 42.61 MB | **Fastest Baseline.** Sangat cepat dalam inferensi, namun akurasi masih tertinggal jauh. |
 
-### 2. Insight Analisis
-* **Generalisasi**: MobileNetV2 menunjukkan selisih terkecil antara akurasi training dan testing, yang menandakan model ini paling tahan terhadap *overfitting*.
-* **Efisiensi**: Meskipun VGG16 memiliki performa yang kompetitif, MobileNetV2 lebih unggul untuk penggunaan website karena waktu inferensi yang lebih cepat.
-* **Kesimpulan**: Berdasarkan data di atas, MobileNetV2 dipilih sebagai model utama dalam sistem **EcoSort AI** karena keseimbangan sempurna antara akurasi dan kecepatan.
+### 2. Insight Analisis Komprehensif
+* **Generalisasi**: **MobileNetV2** menunjukkan fenomena menarik di mana akurasi testing sedikit lebih tinggi dari training, menandakan model memiliki kemampuan generalisasi yang sangat kuat terhadap data baru.
+* **Efisiensi Ruang**: Terdapat perbedaan drastis pada ukuran file; **MobileNetV2 (8.73 MB)** hampir **60x lipat lebih kecil** dibandingkan **VGG16 (512.21 MB)**, yang membuatnya sangat praktis untuk aplikasi berbasis web.
+* **Kecepatan Inferensi**: Meskipun **Base CNN (6.74 ms)** adalah yang tercepat, selisihnya sangat tipis dengan **MobileNetV2 (7.22 ms)**, sehingga MobileNetV2 tetap menjadi pilihan paling rasional karena akurasinya yang jauh lebih unggul.
+* **Kesimpulan Akhir**: **MobileNetV2** secara resmi dipilih sebagai mesin utama **EcoSort AI** karena memenangkan hampir seluruh metrik krusial: Akurasi, Ukuran File, dan Efisiensi Generalisasi.
 ---
 
 ## 💻 Panduan Instalasi Lokal
