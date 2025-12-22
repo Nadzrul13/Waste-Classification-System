@@ -43,21 +43,6 @@ Dataset berasal dari **Waste Classification Data** (Kaggle) yang mencakup dua ka
 2. **VGG16 (Transfer Learning)**: Model pre-trained mendalam yang unggul dalam ekstraksi fitur visual yang kompleks.
 3. **MobileNetV2 (Transfer Learning)**: Arsitektur ringan yang dioptimalkan untuk performa tinggi dengan latensi rendah (Mobile-ready).
 
----
-
-## ✅ UMM Laboratory Assessment (UAP)
-
-| No | Komponen Persyaratan | Implementasi Proyek | Status |
-|---|---|---|---|
-| 1 | **Pemilihan Topik** | Klasifikasi Citra Sampah (Computer Vision) | ✅ |
-| 2 | **Dataset** | > 20.000 citra (Kaggle Waste Dataset) | ✅ |
-| 3 | **Model** | Perbandingan Base CNN, VGG16, dan MobileNetV2 | ✅ |
-| 4 | **Evaluasi** | Analisis Akurasi, Confusion Matrix, & Report | ✅ |
-| 5 | **Sistem Website** | Web Dashboard Interaktif (Streamlit) | ✅ |
-| 6 | **Dokumentasi** | Repositori terstruktur & README komprehensif | ✅ |
-
----
-
 ## 📊 Hasil Evaluasi & Analisis Perbandingan
 
 ### 1. Tabel Perbandingan Performa
