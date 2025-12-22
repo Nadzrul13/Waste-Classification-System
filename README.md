@@ -50,33 +50,16 @@ Proyek ini menggunakan **Waste Classification Data** yang bersumber dari Kaggle.
 Sistem ini mengikuti alur *End-to-End Machine Learning Pipeline* yang sistematis untuk memastikan integritas data dan performa model yang optimal.
 
 ```mermaid
-graph TD
-    subgraph Data_Preparation [Fase Persiapan Data]
-        A[Data Ingestion: Kaggle Waste Dataset] --> B(Image Preprocessing)
-        B --> B1[Resizing 224x224]
-        B --> B2[Normalization ImageNet]
-        B --> B3[Augmentation Training Set]
-    end
+graph LR
+    A[Data Ingestion] --> B(Preprocessing)
+    B --> C{Model Selection}
+    C --> D[Base CNN]
+    C --> E[VGG16]
+    C --> F[MobileNetV2]
+    D & E & F --> G[Evaluation]
+    G --> H[Streamlit Dashboard]
 
-    subgraph Model_Development [Fase Pengembangan Model]
-        B3 --> C{Arsitektur Model}
-        C -->|Baseline| D[Base CNN Scratch]
-        C -->|Transfer| E[VGG16]
-        C -->|Transfer| F[MobileNetV2]
-    end
-
-    subgraph Analysis [Fase Evaluasi & Analisis]
-        D & E & F --> G[Metric Assessment]
-        G --> G1[Accuracy & F1-Score]
-        G --> G2[Confusion Matrix]
-    end
-
-    G1 & G2 --> H[Best Model Selection]
-    H --> I[Streamlit Web Dashboard]
-
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style I fill:#00ff00,stroke:#333,stroke-width:4px
-    style C fill:#fff4dd,stroke:#d4a017,stroke-width:2px
+    style H fill:#00ff00,stroke:#333,stroke-width:2px
 ```
 
 ## 🧠 Arsitektur Model
@@ -119,6 +102,7 @@ streamlit run app.py
 ```
 
 ## 📁 Struktur Direktori
+```bash
 Waste-Classification-System/
 ├── outputs/                # Bobot model (.pth), Log history, & Visualisasi
 │   ├── Base_CNN_best.pth
@@ -135,3 +119,5 @@ Waste-Classification-System/
 ├── requirements.txt        # Dependensi Python
 ├── structure.txt           # Hierarki file
 └── README.md               # Dokumentasi utama
+```
+
