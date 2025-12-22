@@ -81,7 +81,7 @@ Dataset berasal dari **Waste Classification Data** (Kaggle) yang mencakup dua ka
 
 ```bash
 # 1. Clone repositori
-git clone [https://github.com/Nadzrul13/Waste-Classification-System.git](https://github.com/Nadzrul13/Waste-Classification-System.git)
+git clone https://github.com/Nadzrul13/Waste-Classification-System.git
 
 # 2. Masuk ke direktori proyek
 cd Waste-Classification-System
