@@ -117,13 +117,10 @@ Sistem ini diuji menggunakan data independen (*test set*) untuk memastikan objek
 # 1. Clone repositori
 git clone https://github.com/Nadzrul13/Waste-Classification-System.git
 
-# 2. Masuk ke direktori proyek
-cd Waste-Classification-System
-
-# 3. Instal dependensi library
+# 2. Instal dependensi library
 pip install -r requirements.txt
 
-# 4. Jalankan aplikasi secara lokal
+# 3. Jalankan aplikasi secara lokal
 streamlit run app.py
 ```
 
