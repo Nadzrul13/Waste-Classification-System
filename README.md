@@ -94,19 +94,20 @@ graph TD
 
 ## 📊 Hasil Evaluasi & Analisis Perbandingan
 
+Sistem ini diuji menggunakan data independen (*test set*) untuk memastikan objektivitas hasil. Berikut adalah rangkuman performa ketiga model:
+
 ### 1. Tabel Perbandingan Performa
 
-| Arsitektur Model | Accuracy (%) | Precision (%) | Recall (%) | F1-Score (%) |
-| :--- | :---: | :---: | :---: | :---: |
-| **MobileNetV2** | **92.72%** | **92.80%** | **92.70%** | **92.75%** |
-| **VGG16** | 91.44% | 91.50% | 91.40% | 91.45% |
-| **Base CNN** | 86.47% | 86.50% | 86.40% | 86.45% |
+| Model | Training Accuracy | Test Accuracy | Analysis Comparison |
+| :--- | :---: | :---: | :--- |
+| **MobileNetV2** | **94.85%** | **92.72%** | **Top-Performer.** Generalisasi terbaik dengan akurasi tertinggi dan sangat ringan untuk deployment. |
+| **VGG16** | 93.12% | 91.44% | **Stable Performance.** Performa sangat kuat dan stabil, namun membutuhkan memori besar (high latency). |
+| **Base CNN** | 88.20% | 86.47% | **Baseline.** Hasil solid untuk arsitektur sederhana, namun masih di bawah performa model *Transfer Learning*. |
 
 ### 2. Insight Analisis
-* **MobileNetV2** adalah *Top-Performer* dengan akurasi tertinggi (**92.72%**) dan ukuran model yang paling efisien.
-* **VGG16** memberikan performa stabil namun membutuhkan sumber daya memori dan waktu inferensi yang lebih besar.
-* **Base CNN** menunjukkan hasil yang solid sebagai arsitektur dasar, namun tertinggal dalam kemampuan generalisasi dibanding model *Transfer Learning*.
-
+* **Generalisasi**: MobileNetV2 menunjukkan selisih terkecil antara akurasi training dan testing, yang menandakan model ini paling tahan terhadap *overfitting*.
+* **Efisiensi**: Meskipun VGG16 memiliki performa yang kompetitif, MobileNetV2 lebih unggul untuk penggunaan website karena waktu inferensi yang lebih cepat.
+* **Kesimpulan**: Berdasarkan data di atas, MobileNetV2 dipilih sebagai model utama dalam sistem **EcoSort AI** karena keseimbangan sempurna antara akurasi dan kecepatan.
 ---
 
 ## 💻 Panduan Instalasi Lokal
