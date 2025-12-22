@@ -8,9 +8,11 @@
 ![Dataset](https://img.shields.io/badge/Dataset-Waste_Classification-00D4FF?style=for-the-badge&logo=kaggle)
 ![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
-**[Dataset Link](https://www.kaggle.com/datasets/techsash/waste-classification-data)** • **[Model Benchmarks](#-hasil-evaluasi--analisis-perbandingan)** • **[Installation](#-panduan-instalasi-lokal)**
+**[🚀 LIVE DEMO](https://waste-classification-systemgit-gsyz2ewsnph3ccnntfsaxh.streamlit.app/)** • **[📊 MODEL BENCHMARKS](#-hasil-evaluasi--analisis-perbandingan)** • **[📂 DATASET LINK](https://www.kaggle.com/datasets/techsash/waste-classification-data)**
 
 <br>
+
+---
 
 </div>
 
