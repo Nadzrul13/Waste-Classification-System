@@ -44,6 +44,52 @@ Proyek ini menggunakan **Waste Classification Data** yang bersumber dari Kaggle.
 * **Pembagian Data:** Dataset dipisahkan secara sistematis ke dalam folder `train` (22.564 data) dan `test` (2.513 data).
 
 ---
+<div align="center">
+
+# ♻️ ECOSORT AI: INTELLIGENT WASTE CLASSIFIER
+### *Deep Learning Framework: Base CNN vs. VGG16 vs. MobileNetV2*
+
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge&logo=github)
+![Framework](https://img.shields.io/badge/Framework-PyTorch-EE4C2C?style=for-the-badge&logo=pytorch)
+![Dataset](https://img.shields.io/badge/Dataset-Waste_Classification-00D4FF?style=for-the-badge&logo=kaggle)
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+
+**[Dataset Link](https://www.kaggle.com/datasets/techsash/waste-classification-data)** • **[Model Benchmarks](#-hasil-evaluasi--analisis-perbandingan)** • **[Installation](#-panduan-instalasi-lokal)**
+
+<br>
+
+<img src="outputs/full_comparison_plot.png" alt="EcoSort Banner" width="600" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"/>
+
+</div>
+
+## 📖 Deskripsi Proyek
+
+**EcoSort AI** adalah sistem klasifikasi citra berbasis *Deep Learning* yang dirancang untuk mengidentifikasi kategori sampah secara otomatis. Proyek ini bertujuan untuk mendukung gerakan *smart environment* dengan mempermudah proses pemilahan sampah di sumbernya melalui integrasi teknologi visi komputer.
+
+Sistem ini melakukan studi komparatif antara tiga arsitektur saraf tiruan (**Custom Base CNN**, **VGG16**, dan **MobileNetV2**) untuk menemukan keseimbangan optimal antara akurasi prediksi dan efisiensi komputasi. Aplikasi ini diimplementasikan menggunakan antarmuka web interaktif berbasis Streamlit.
+
+---
+
+## 📂 Dataset & Alur Pra-pemrosesan
+
+Proyek ini menggunakan **Waste Classification Data** yang bersumber dari Kaggle. Dataset ini memiliki total data yang besar untuk memastikan model mengenali berbagai variasi bentuk sampah.
+
+* **Sumber Dataset:** [Kaggle - Waste Classification Data by Sashaank Sekar](https://www.kaggle.com/datasets/techsash/waste-classification-data)
+* **Total Dataset:** 25.077 Citra
+* **Jumlah Kelas:** 2 Kategori Utama
+
+| Kategori | Karakteristik Visual | Jenis Material | Jumlah Data |
+| :--- | :--- | :--- | :--- |
+| **Organic (O)** | Material alami, tekstur tidak beraturan, tanda pembusukan. | Sisa makanan, sayuran, buah, daun. | **13.966** |
+| **Recyclable (R)** | Bentuk geometris, tekstur halus/keras, reflektif. | Plastik, kertas, logam, kaca, botol. | **11.111** |
+
+### 🛠️ Alur Pra-pemrosesan
+* **Pengubahan Ukuran (Resizing):** Standarisasi citra menjadi $224 \times 224$ piksel (RGB).
+* **Normalisasi:** Menggunakan skala *mean* `[0.485, 0.456, 0.406]` dan *std* `[0.229, 0.224, 0.225]` sesuai standar ImageNet.
+* **Augmentasi Data:** Menerapkan *Random Horizontal Flip* dan *Random Rotation* ($10^\circ$).
+* **Pembagian Data:** Dataset dipisahkan secara sistematis ke dalam folder `train` (22.564 data) dan `test` (2.513 data).
+
+---
 
 ## ⚙️ Metodologi Penelitian
 
@@ -77,6 +123,7 @@ graph TD
     style A fill:#f9f,stroke:#333,stroke-width:2px
     style I fill:#00ff00,stroke:#333,stroke-width:4px
     style C fill:#fff4dd,stroke:#d4a017,stroke-width:2px
+```
 
 ## 🧠 Arsitektur Model
 
@@ -115,6 +162,7 @@ pip install -r requirements.txt
 
 # 4. Jalankan aplikasi secara lokal
 streamlit run app.py
+```
 
 ## 📁 Struktur Direktori
 Waste-Classification-System/
