@@ -22,18 +22,25 @@ Sistem ini melakukan studi komparatif antara tiga arsitektur saraf tiruan (**Cus
 
 ---
 
-## 📂 Dataset & Preprocessing
+## 📂 Dataset & Alur Pra-pemrosesan
 
-### 1. Sumber Data
-Dataset berasal dari **Waste Classification Data** (Kaggle) yang mencakup dua kategori strategis:
-* **Organic (O)**: Citra sampah organik (sisa makanan, daun, limbah biologis).
-* **Recyclable (R)**: Citra sampah anorganik layak daur ulang (plastik, kertas, kaca, logam).
+Proyek ini menggunakan **Waste Classification Data** yang bersumber dari Kaggle. Dataset ini dirancang untuk melatih model dalam membedakan material sisa berdasarkan potensi daur ulangnya.
 
-### 2. Preprocessing Pipeline
-* **Resizing**: Standarisasi dimensi citra menjadi $224 \times 224$ piksel.
-* **Normalization**: Menggunakan parameter ImageNet (mean `[0.485, 0.456, 0.406]`, std `[0.229, 0.224, 0.225]`).
-* **Data Augmentation**: Transformasi *Random Horizontal Flip* dan *Rotation* untuk memperkaya variasi data training.
-* **Data Splitting**: Distribusi data otomatis ke dalam folder *Train*, *Validation*, dan *Test*.
+* **Sumber Dataset:** [Kaggle - Waste Classification Data by Sashaank Sekar](https://www.kaggle.com/datasets/techsash/waste-classification-data)
+* **Jumlah Kelas:** 2 Kategori Utama
+
+| Kategori | Karakteristik Visual | Jenis Material |
+| :--- | :--- | :--- |
+| **Organic (O)** | Material alami, tekstur tidak beraturan, tanda pembusukan. | Sisa makanan, sayuran, buah-buahan, daun kering. |
+| **Recyclable (R)** | Bentuk geometris buatan, tekstur halus/keras, reflektif. | Plastik, kertas, logam, kaca, botol minuman. |
+
+### 🛠️ Alur Pra-pemrosesan
+Untuk memastikan performa model yang optimal dan stabil, data diproses melalui tahapan berikut:
+
+* **Pengubahan Ukuran (Resizing):** Standarisasi citra menjadi $224 \times 224$ piksel (RGB) untuk menyesuaikan input arsitektur VGG16 dan MobileNetV2.
+* **Normalisasi:** Menggunakan skala *mean* `[0.485, 0.456, 0.406]` dan *std* `[0.229, 0.224, 0.225]` sesuai standar ImageNet.
+* **Augmentasi Data:** Menerapkan *Random Horizontal Flip* dan *Random Rotation* ($10^\circ$) pada data latih untuk meningkatkan kemampuan generalisasi model terhadap posisi objek yang bervariasi.
+* **Pembagian Data:** Dataset dipisahkan secara sistematis ke dalam folder `train` (latih) dan `test` (uji).
 
 ---
 
