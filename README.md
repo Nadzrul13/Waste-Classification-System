@@ -12,6 +12,8 @@
 
 <br>
 
+<img src="outputs/full_comparison_plot.png" alt="EcoSort Banner" width="600" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"/>
+
 </div>
 
 ## 📖 Deskripsi Proyek
@@ -24,25 +26,57 @@ Sistem ini melakukan studi komparatif antara tiga arsitektur saraf tiruan (**Cus
 
 ## 📂 Dataset & Alur Pra-pemrosesan
 
-Proyek ini menggunakan **Waste Classification Data** yang bersumber dari Kaggle. Dataset ini dirancang untuk melatih model dalam membedakan material sisa berdasarkan potensi daur ulangnya.
+Proyek ini menggunakan **Waste Classification Data** yang bersumber dari Kaggle. Dataset ini memiliki total data yang besar untuk memastikan model mengenali berbagai variasi bentuk sampah.
 
 * **Sumber Dataset:** [Kaggle - Waste Classification Data by Sashaank Sekar](https://www.kaggle.com/datasets/techsash/waste-classification-data)
+* **Total Dataset:** 25.077 Citra
 * **Jumlah Kelas:** 2 Kategori Utama
 
-| Kategori | Karakteristik Visual | Jenis Material |
-| :--- | :--- | :--- |
-| **Organic (O)** | Material alami, tekstur tidak beraturan, tanda pembusukan. | Sisa makanan, sayuran, buah-buahan, daun kering. |
-| **Recyclable (R)** | Bentuk geometris buatan, tekstur halus/keras, reflektif. | Plastik, kertas, logam, kaca, botol minuman. |
+| Kategori | Karakteristik Visual | Jenis Material | Jumlah Data |
+| :--- | :--- | :--- | :--- |
+| **Organic (O)** | Material alami, tekstur tidak beraturan, tanda pembusukan. | Sisa makanan, sayuran, buah, daun. | **13.966** |
+| **Recyclable (R)** | Bentuk geometris, tekstur halus/keras, reflektif. | Plastik, kertas, logam, kaca, botol. | **11.111** |
 
 ### 🛠️ Alur Pra-pemrosesan
-Untuk memastikan performa model yang optimal dan stabil, data diproses melalui tahapan berikut:
-
-* **Pengubahan Ukuran (Resizing):** Standarisasi citra menjadi $224 \times 224$ piksel (RGB) untuk menyesuaikan input arsitektur VGG16 dan MobileNetV2.
+* **Pengubahan Ukuran (Resizing):** Standarisasi citra menjadi $224 \times 224$ piksel (RGB).
 * **Normalisasi:** Menggunakan skala *mean* `[0.485, 0.456, 0.406]` dan *std* `[0.229, 0.224, 0.225]` sesuai standar ImageNet.
-* **Augmentasi Data:** Menerapkan *Random Horizontal Flip* dan *Random Rotation* ($10^\circ$) pada data latih untuk meningkatkan kemampuan generalisasi model terhadap posisi objek yang bervariasi.
-* **Pembagian Data:** Dataset dipisahkan secara sistematis ke dalam folder `train` (latih) dan `test` (uji).
+* **Augmentasi Data:** Menerapkan *Random Horizontal Flip* dan *Random Rotation* ($10^\circ$).
+* **Pembagian Data:** Dataset dipisahkan secara sistematis ke dalam folder `train` (22.564 data) dan `test` (2.513 data).
 
 ---
+
+## ⚙️ Metodologi Penelitian
+
+Sistem ini mengikuti alur *End-to-End Machine Learning Pipeline* yang sistematis untuk memastikan integritas data dan performa model yang optimal.
+
+```mermaid
+graph TD
+    subgraph Data_Preparation [Fase Persiapan Data]
+        A[Data Ingestion: Kaggle Waste Dataset] --> B(Image Preprocessing)
+        B --> B1[Resizing 224x224]
+        B --> B2[Normalization ImageNet]
+        B --> B3[Augmentation Training Set]
+    end
+
+    subgraph Model_Development [Fase Pengembangan Model]
+        B3 --> C{Arsitektur Model}
+        C -->|Baseline| D[Base CNN Scratch]
+        C -->|Transfer| E[VGG16]
+        C -->|Transfer| F[MobileNetV2]
+    end
+
+    subgraph Analysis [Fase Evaluasi & Analisis]
+        D & E & F --> G[Metric Assessment]
+        G --> G1[Accuracy & F1-Score]
+        G --> G2[Confusion Matrix]
+    end
+
+    G1 & G2 --> H[Best Model Selection]
+    H --> I[Streamlit Web Dashboard]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style I fill:#00ff00,stroke:#333,stroke-width:4px
+    style C fill:#fff4dd,stroke:#d4a017,stroke-width:2px
 
 ## 🧠 Arsitektur Model
 
