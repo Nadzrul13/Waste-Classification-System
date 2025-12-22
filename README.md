@@ -49,32 +49,41 @@ Sistem ini mengikuti alur *End-to-End Machine Learning Pipeline* yang sistematis
 
 ```mermaid
 graph TD
-    %% Section 1: Data
-    subgraph S1 [DATA PIPELINE]
-        A[(Waste Imagery)] --> B[Preprocessing & Augmentation]
-    end
+    %% Nodes Definition
+    A([Waste Imagery Database]) 
+    B[Preprocessing & Augmentation]
+    C{Architecture Selection}
+    D[Base CNN Scratch]
+    E[VGG16 TL]
+    F[MobileNetV2 TL]
+    G[Training & Validation]
+    H[Performance Analysis]
+    I([Streamlit Dashboard])
 
-    %% Section 2: Model Benchmarking
-    subgraph S2 [MODEL EXPERIMENTATION]
-        B --> C{Architecture Selection}
-        C --- D[Base CNN Scratch]
-        C --- E[VGG16 TL]
-        C --- F[MobileNetV2 TL]
-        D & E & F --> G[Training & Validation]
-    end
+    %% Flow
+    A --> B
+    B --> C
+    C --- D
+    C --- E
+    C --- F
+    D & E & F --> G
+    G --> H
+    H --> I
 
-    %% Section 3: Final Stage
-    subgraph S3 [SYSTEM DEPLOYMENT]
-        G --> H[Model Performance Analysis]
-        H --> I[Streamlit Interface]
-    end
+    %% Styling for Dark Mode Synchronization
+    %% Menggunakan warna-warna yang cerah namun elegan agar kontras dengan background gelap
+    style A fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#fff
+    style B fill:#1e293b,stroke:#94a3b8,stroke-width:1px,color:#fff
+    style C fill:#1e293b,stroke:#fbbf24,stroke-width:2px,color:#fff
+    style D fill:#0f172a,stroke:#475569,stroke-width:1px,color:#cbd5e1
+    style E fill:#0f172a,stroke:#475569,stroke-width:1px,color:#cbd5e1
+    style F fill:#0f172a,stroke:#475569,stroke-width:1px,color:#cbd5e1
+    style G fill:#1e293b,stroke:#94a3b8,stroke-width:1px,color:#fff
+    style H fill:#1e293b,stroke:#94a3b8,stroke-width:1px,color:#fff
+    style I fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#fff
 
-    %% Aesthetics Styling
-    style S1 fill:#f0fff4,stroke:#2d3748,stroke-dasharray: 5 5
-    style S2 fill:#ebf8ff,stroke:#2d3748,stroke-dasharray: 5 5
-    style S3 fill:#fffaf0,stroke:#2d3748,stroke-dasharray: 5 5
-    style I fill:#48bb78,stroke:#1a202c,stroke-width:2px,color:#fff
-    style A fill:#3182ce,color:#fff
+    %% Link Styling (Garis Penghubung)
+    linkStyle default stroke:#64748b,stroke-width:1px
 ```
 
 ## 🧠 Arsitektur Model
