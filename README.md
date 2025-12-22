@@ -100,9 +100,9 @@ Sistem ini diuji menggunakan data independen (*test set*) untuk memastikan objek
 
 | Model | Training Accuracy | Test Accuracy | Analysis Comparison |
 | :--- | :---: | :---: | :--- |
-| **MobileNetV2** | **94.85%** | **92.72%** | **Top-Performer.** Generalisasi terbaik dengan akurasi tertinggi dan sangat ringan untuk deployment. |
-| **VGG16** | 93.12% | 91.44% | **Stable Performance.** Performa sangat kuat dan stabil, namun membutuhkan memori besar (high latency). |
-| **Base CNN** | 88.20% | 86.47% | **Baseline.** Hasil solid untuk arsitektur sederhana, namun masih di bawah performa model *Transfer Learning*. |
+| **MobileNetV2** | **91.8%** | **92.7%** | **Top-Performer.** Generalisasi terbaik dengan akurasi tertinggi dan sangat ringan untuk deployment. |
+| **VGG16** | 95.8% | 91.4% | **Stable Performance.** Performa sangat kuat dan stabil, namun membutuhkan memori besar (high latency). |
+| **Base CNN** | 85.7% | 86.5% | **Baseline.** Hasil solid untuk arsitektur sederhana, namun masih di bawah performa model *Transfer Learning*. |
 
 ### 2. Insight Analisis
 * **Generalisasi**: MobileNetV2 menunjukkan selisih terkecil antara akurasi training dan testing, yang menandakan model ini paling tahan terhadap *overfitting*.
@@ -158,6 +158,6 @@ Waste-Classification-System/
   
   ---
   
-  *“Technology for a Greener Future”* **Crafted by: [Nadzrul Khair](https://github.com/Nadzrul13)**
+  *“Technology for a Greener Future”* **Crafted by: [Nadzrul Khair-042](https://github.com/Nadzrul13)**
 
 </div>
