@@ -12,8 +12,6 @@
 
 <br>
 
-<img src="outputs/full_comparison_plot.png" alt="EcoSort Banner" width="600" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"/>
-
 </div>
 
 ## 📖 Deskripsi Proyek
@@ -50,16 +48,33 @@ Proyek ini menggunakan **Waste Classification Data** yang bersumber dari Kaggle.
 Sistem ini mengikuti alur *End-to-End Machine Learning Pipeline* yang sistematis untuk memastikan integritas data dan performa model yang optimal.
 
 ```mermaid
-graph LR
-    A[Data Ingestion] --> B(Preprocessing)
-    B --> C{Model Selection}
-    C --> D[Base CNN]
-    C --> E[VGG16]
-    C --> F[MobileNetV2]
-    D & E & F --> G[Evaluation]
-    G --> H[Streamlit Dashboard]
+graph TD
+    %% Section 1: Data
+    subgraph S1 [DATA PIPELINE]
+        A[(Waste Imagery)] --> B[Preprocessing & Augmentation]
+    end
 
-    style H fill:#00ff00,stroke:#333,stroke-width:2px
+    %% Section 2: Model Benchmarking
+    subgraph S2 [MODEL EXPERIMENTATION]
+        B --> C{Architecture Selection}
+        C --- D[Base CNN Scratch]
+        C --- E[VGG16 TL]
+        C --- F[MobileNetV2 TL]
+        D & E & F --> G[Training & Validation]
+    end
+
+    %% Section 3: Final Stage
+    subgraph S3 [SYSTEM DEPLOYMENT]
+        G --> H[Model Performance Analysis]
+        H --> I[Streamlit Interface]
+    end
+
+    %% Aesthetics Styling
+    style S1 fill:#f0fff4,stroke:#2d3748,stroke-dasharray: 5 5
+    style S2 fill:#ebf8ff,stroke:#2d3748,stroke-dasharray: 5 5
+    style S3 fill:#fffaf0,stroke:#2d3748,stroke-dasharray: 5 5
+    style I fill:#48bb78,stroke:#1a202c,stroke-width:2px,color:#fff
+    style A fill:#3182ce,color:#fff
 ```
 
 ## 🧠 Arsitektur Model
@@ -121,3 +136,18 @@ Waste-Classification-System/
 └── README.md               # Dokumentasi utama
 ```
 
+---
+
+<br />
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Copyright-2025-blue?style=flat-square" alt="Copyright">
+  
+  ### 🏁 EcoSort AI: Final Project
+  **Informatics Engineering** **Universitas Muhammadiyah Malang**
+  
+  ---
+  
+  *“Technology for a Greener Future”* **Crafted by: [Nadzrul Khair](https://github.com/Nadzrul13)**
+
+</div>
