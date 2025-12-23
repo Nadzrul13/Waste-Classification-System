@@ -6,7 +6,7 @@
 ![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge&logo=github)
 ![Framework](https://img.shields.io/badge/Framework-PyTorch-EE4C2C?style=for-the-badge&logo=pytorch)
 ![Dataset](https://img.shields.io/badge/Dataset-Waste_Classification-00D4FF?style=for-the-badge&logo=kaggle)
-![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
 **[🚀 LIVE DEMO](https://waste-classification-systemgit-gsyz2ewsnph3ccnntfsaxh.streamlit.app/)** • **[📊 MODEL BENCHMARKS](#-hasil-evaluasi--analisis-perbandingan)** • **[📂 DATASET LINK](https://www.kaggle.com/datasets/techsash/waste-classification-data)**
 
