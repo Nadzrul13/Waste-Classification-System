@@ -103,7 +103,7 @@ Sistem ini diuji menggunakan data independen (*test set*) untuk memastikan objek
 | Model | Training Acc | Test Acc | Inf. Time (ms) | Size (MB) | Analysis Comparison |
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | **MobileNetV2** | **91.8%** | **92.7%** | **7.22 ms** | **8.73 MB** | **Top-Performer.** Efisiensi luar biasa dengan akurasi tertinggi dan ukuran paling ringan. |
-| **VGG16** | 95.8% | 91.4% | 15.24 ms | 512.21 MB | **Heavyweight.** Akurasi sangat stabil namun sangat lambat dan memakan banyak ruang penyimpanan. |
+| **VGG16** | 95.8% | 91.4% | 15.24 ms | 512.21 MB | **Heavyweight.** Akurasi sangat stabil namun kurang cepat dan memakan banyak ruang penyimpanan. |
 | **Base CNN** | 85.7% | 86.5% | 6.74 ms | 42.61 MB | **Fastest Baseline.** Sangat cepat dalam inferensi, namun akurasi masih tertinggal jauh. |
 
 ### 2. Insight Analisis Komprehensif
