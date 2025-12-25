@@ -132,6 +132,10 @@ streamlit run app.py
 ## 📁 Struktur Direktori
 ```bash
 Waste-Classification-System/
+├── DATASET/                # Dataset yang dibagi menjadi TEST, TRAIN, dan VAL
+│   ├── TEST/
+│   ├── TRAIN/
+│   └── VAL/
 ├── outputs/                # Bobot model (.pth), Log history, & Visualisasi
 │   ├── Base_CNN_best.pth
 │   ├── MobileNetV2_best.pth
@@ -144,8 +148,8 @@ Waste-Classification-System/
 │   └── label_mapping.json
 ├── app.py                  # Script Dashboard Streamlit
 ├── main.ipynb              # Notebook Eksperimen (Training & Eval)
-├── requirements.txt        # Dependensi Python
-├── structure.txt           # Hierarki file
+├── requirements.txt        # Daftar library/dependensi Python
+├── structure.txt           # Dokumentasi teks struktur folder/proyek
 └── README.md               # Dokumentasi utama
 ```
 
